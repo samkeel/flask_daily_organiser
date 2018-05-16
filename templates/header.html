@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="{{url_for('showMain')}}">CONTROLLER</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('showMain')}}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('showTodo')}}">ToDo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('showPlanner')}}">Planner</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('showKnowledgebase')}}">Knowledgebase</a>
+            </li>
+        </ul>
+    </div>
+</nav>
