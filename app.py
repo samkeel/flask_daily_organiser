@@ -7,18 +7,17 @@ from flask import (Flask,
                    redirect)
 
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, scoped_session
 from database_setup import Base, Planner
 import httplib2
 
 app = Flask(__name__)
 
-
 engine = create_engine('sqlite:///controller.db')
 Base.metadata.bind = engine
 
-DBSession = sessionmaker(bind=engine)
-session = DBSession()
+# Use scoped_session to make requests thread safe
+session = scoped_session(sessionmaker(bind=engine))
 
 @app.route("/")
 def showMain():
